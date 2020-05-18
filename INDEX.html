@@ -6,6 +6,39 @@
     <link href="./styles/style.css" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay" class="overlay-display">
+        <div id="game-options-container">
+            <div id="player-one-container">
+                <p>0</p>
+                <input id="player-one-name" type="text" placeholder="Enter name..." maxlength="18">
+            </div>
+            <div id="player-two-container">
+                <p>X</p>
+                <input id="player-two-name" type="text" placeholder="Enter name..." maxlength="18">
+            </div>
+            <div id="play-human" onclick="Game.singleOrMultiPlay('multi')">
+                <span>Two Player</span>
+            </div>
+            <div id="play-comp" onclick="Game.singleOrMultiPlay('single')">
+                <span>Single Player</span>
+            </div>
+        </div>
+    </div>
+    <div id="header-container">
+        <span id="display-player-one" class="player-names"></span>
+        <p id="team-0" class="team-display-0-turn">0</p>
+        <span id="display-player-two" class="player-names"></span>
+        <p id="team-x" class="team-display-x">X</p>
+    </div>
+    <div id="body-container">
+        <div id="game-end-overlay" class="game-end-overlay-hidden">
+            <p id="win-lose-tie"></p>
+            <div id="play-again">
+                <p onclick="Game.playAgain()">Play Again</p>
+            </div>
+        </div>
+    <div id="game-container"></div>
+    </div>
     <script src="./scripts/script.js"></script>
 </body>
 </html>

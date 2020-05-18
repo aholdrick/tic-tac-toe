@@ -1,0 +1,264 @@
+body {
+    font-family: sans-serif;
+    background-color: rgba(255, 230, 230, 0.8);
+}
+#cell0, #cell1, #cell3, #cell4, #cell6, #cell7 {
+    border-right: 1px black solid;
+}
+#cell0, #cell1, #cell2, #cell3, #cell4, #cell5 {
+    border-bottom: 1px solid black;
+}
+#game-end-overlay, .game-end-overlay {
+    position: fixed;
+    width: 100%;
+    height: 600px;
+    left: 0;
+    background-color: rgba(0,0,0, 0.3);
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    margin-top: 40px;
+    transition: all 1.5s ease-in-out;
+}
+.game-end-overlay-display {
+    display: grid;
+    transition: all 1.5s ease-in-out;;
+}
+#play-again {
+    user-select: none;
+    text-align: center;
+    vertical-align: center;
+    line-height: 90px;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    width: 125px;
+    height: 125px;
+    color: white;
+    background-color: rgba(0,0,0, 1);
+    border: 1px white solid;
+    transition: all 0.3s;
+}
+#play-again:hover {
+    background-color: white;
+    border: 1px black solid;
+    color: black;
+    transition: all 0.3s;
+}
+#win-lose-tie {
+    user-select: none;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-shadow: 1px 0 1px white, 0 1px 1px white, -1px 0 1px white, 0 -1px 1px white;
+    transition: all 1.5s ease-in-out;;
+}
+.game-end-overlay-hidden {
+    display: none;
+    transition: all 1.5s ease-in-out;;
+}
+#overlay, .overlay-display {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.3);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.overlay-hidden {
+    display: none;
+}
+.overlay-display {
+    display: grid;
+    grid-template-columns: 50px auto 250px 600px 250px auto 50px;
+    grid-template-rows: 150px 25px 600px auto;
+}
+#game-options-container {
+    display: grid;
+    grid-template-rows: 75px 200px 75px 75px 75px;
+    grid-template-columns: 75px 100px 50px 50px 50px 100px 75px;
+    width: 500px;
+    height: 500px;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    align-self: center;
+    justify-self: center;
+    background-color: rgba(0,0,0, 0.9);
+}
+#player-one-name:focus, #player-two-name:focus {
+    outline: none;
+}
+#player-one-container {
+    display: grid;
+    grid-template-rows: 50px 50px 50px 150px 50px;
+    width: 100%;
+    height: 100%;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    color: white;
+}
+#player-one-name, #player-two-name {
+    width: 90%;
+    padding: 5px;
+    background-color: rgba(255,255,255, 0);
+    justify-self: center;
+    align-self: center;
+    grid-row: 3 / 4;
+    border: none;
+    border-bottom: 2px white solid;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+#player-one-container p, #player-two-container p {
+    grid-row: 2 / 3;
+    justify-self: center;
+    user-select: none;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    margin: 0;
+}
+#play-human, #play-comp {
+    display: grid;
+    grid-column: 3 / 6;
+    width: 110px;
+    height: 40px;
+    border: 1px solid white;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    transition: all 0.3s;
+}
+#play-human {
+    grid-row: 3 / 4;
+}
+#play-human span, #play-comp span {
+    align-self: center;
+    justify-self: center;
+    user-select: none;
+}
+#play-comp {
+    grid-row:4 / 5;
+}
+#play-human:hover, #play-comp:hover {
+    background-color: white;
+    color: black;
+}
+#player-two-container {
+    display: grid;
+    grid-template-rows: 50px 50px 50px 150px 50px;
+    width: 100%;
+    height: 100%;
+    grid-column: 5 / 7;
+    grid-row: 2 / 3;
+    color: white;
+}
+#header-container {
+    width: 100%;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 50px auto 600px auto 50px;
+    grid-template-rows: repeat(4, 1fr);
+}
+.player-names {
+    width: 150px;
+    font-size: 24px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    user-select: none;
+}
+#display-player-one {
+    align-self: end;
+    justify-self: start;
+}
+#display-player-two {
+    align-self: end;
+    justify-self: end;
+}
+.team-display-0, .team-display-x, .team-display-0-turn, .team-display-x-turn {
+    font-size: 50px;
+    font-weight: bold;
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    user-select: none;
+}
+.team-display-0 {
+    justify-self: start;
+    margin-left: 60px;
+    transition: all 0.3s;
+}
+.team-display-0-turn {
+    font-size: 70px;
+    justify-self: start;
+    margin-left: 60px;
+    transition: all 0.3s;
+    color: white;
+    text-shadow: 1px 0 1px black, 0 1px 1px black, -1px 0 1px black, 0 -1px 1px black;
+}
+.team-display-x {
+    justify-self: end;
+    margin-right: 60px;
+    transition: all 0.3s;
+}
+.team-display-x-turn {
+    font-size: 70px;
+    justify-self: end;
+    margin-right: 60px;
+    transition: all 0.3s;
+    color: white;
+    text-shadow: 1px 0 1px black, 0 1px 1px black, -1px 0 1px black, 0 -1px 1px black;
+}
+#body-container {
+    width: 100%;
+    min-height: 700px;
+    display: grid;
+    grid-template-columns: 50px auto 250px 600px 250px auto 50px;
+    grid-template-rows: 25px 600px auto;
+}
+#game-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 550px;
+    height: 550px;
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+    align-self: center;
+    justify-self: center;
+}
+.game-cell {
+    height: 185px;
+    width: 185px;
+    max-width: 185px;
+    max-height: 185px;
+    text-align: center;
+    user-select: none;
+    transition: all 0.3s;
+    vertical-align: middle;
+    line-height: 190px;
+    font-size: 60px;
+    font-weight: bold;
+}
+.game-cell:hover {
+    background-color: white;
+}
+.game-cell-no-pointer {
+    pointer-events: none;
+    height: 185px;
+    width: 185px;
+    max-width: 185px;
+    max-height: 185px;
+    text-align: center;
+    user-select: none;
+    transition: all 0.3s;
+    vertical-align: middle;
+    line-height: 190px;
+    font-size: 60px;
+    font-weight: bold;
+}
